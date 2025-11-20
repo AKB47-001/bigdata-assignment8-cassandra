@@ -47,7 +47,7 @@ class CassandraDB():
             self.cluster.shutdown()
 
     # Function to create the Customer Table with indices
-    def create_table(self):        
+    def create(self):        
         if not self.session:
             print("[WARNING] Cannot create table — no database connection.")
             return
@@ -186,7 +186,7 @@ if __name__ == '__main__':
         client.connect()
 
         if client.session:
-            client.create_table()
+            client.create()
             client.load()
             client.query_1()
             client.query_2()
